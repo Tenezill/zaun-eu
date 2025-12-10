@@ -1,0 +1,24 @@
+{
+  "title": "Test",
+  "slug": "test",
+  "shortDescription": "small test entry",
+  "longDescription": "test entry to see if everything works as expected",
+  "mainImage": "/uploads/_68A9919.jpg",
+  "gallery": [
+    "/uploads/_68A9921.jpg",
+    "/uploads/_68A9919.jpg"
+  ],
+  "heights": [
+    40
+  ],
+  "colors": [
+    "grau"
+  ],
+  "panelShapes": [
+    "Flach"
+  ],
+  "features": [
+    "test"
+  ],
+  "isFeatured": false
+}

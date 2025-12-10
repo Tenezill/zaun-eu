@@ -33,9 +33,6 @@
           >
             Ihr Zaun-Fachbetrieb
           </span>
-
-          <!-- THEME TOGGLE BUTTON -->
-          
         </div>
 
         <div class="hidden md:flex items-center gap-6 text-sm">

@@ -1,0 +1,30 @@
+{
+  "title": "Gebrochener Stein Premium",
+  "slug": "gebrochener-stein-premium",
+  "shortDescription": "Dekorativer Betonzaun in realistischer Bruchsteinoptik – ideal als Sicht- und Schallschutz für moderne Häuser.",
+  "longDescription": "Dieser Betonzaun verbindet die Optik einer Natursteinmauer mit allen Vorteilen von Beton. Die Paneele sind in mehreren Höhen kombinierbar und können mit offenen Elementen oder Zierschichten ergänzt werden.",
+  "mainImage": "/uploads/Deska-Premium-lamany-kamen.jpg",
+  "gallery": [
+    { "image": "/uploads/Deska-Premium-lamany-kamen.jpg" },
+    { "image": "/uploads/1-antracit-1.png" }
+  ],
+  "heights": [
+    { "value": 150 },
+    { "value": 180 },
+    { "value": 200 }
+  ],
+  "colors": [
+    { "color": "Naturgrau" },
+    { "color": "Anthrazit" }
+  ],
+  "panelShapes": [
+    { "shape": "Flach" },
+    { "shape": "Bogen" }
+  ],
+  "features": [
+    { "feature": "Realistische Natursteinoptik" },
+    { "feature": "Hoher Sicht- und Schallschutz" },
+    { "feature": "Wartungsarm – kein Streichen nötig" }
+  ],
+  "isFeatured": true
+}

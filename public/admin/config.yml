@@ -1,0 +1,123 @@
+backend:
+  name: github
+  repo: Tenezill/zaun-eu
+  branch: master
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: de
+
+collections:
+  # MAIN PRODUCT DESIGNS (PAGES)
+  - name: fenceDesigns
+    label: Betonzaun Designs
+    label_singular: Betonzaun Design
+    folder: "content/fenceDesigns"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: slug, label: Slug (URL), widget: string }
+      - { name: shortDescription, label: Kurzbeschreibung, widget: text }
+      - { name: longDescription, label: Beschreibung, widget: markdown }
+
+      - { name: mainImage, label: Hauptbild, widget: image }
+      - name: gallery
+        label: Galerie
+        widget: list
+        field: { name: image, label: Bild, widget: image }
+
+      - name: heights
+        label: Verfügbare Höhen (cm)
+        widget: list
+        field:
+          name: value
+          label: Höhe
+          widget: number
+
+      - name: colors
+        label: Farben
+        widget: list
+        field:
+          name: color
+          label: Farbe
+          widget: string
+
+      - name: panelShapes
+        label: Panelformen
+        widget: list
+        field:
+          name: shape
+          label: Form
+          widget: select
+          options:
+            - Flach
+            - Bogen
+            - Doppelt-Bogen
+            - Welle
+            - Offen
+
+      - name: features
+        label: Besondere Vorteile
+        widget: list
+        field:
+          name: feature
+          label: Vorteil
+          widget: string
+
+      - name: isFeatured
+        label: Auf Übersichtsseite hervorheben?
+        widget: boolean
+        default: false
+
+  # INDIVIDUAL ELEMENTS (PANELS, POSTS, CAPS)
+  - name: concreteElements
+    label: Beton-Elemente
+    folder: "content/concreteElements"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: slug, label: Slug (intern), widget: string }
+      - { name: type, label: Typ, widget: select, options: ["panel", "post", "cap", "block"] }
+      - label: Design
+        name: design
+        widget: relation
+        collection: fenceDesigns
+        search_fields: ["title"]
+        value_field: "slug"
+        display_fields: ["title"]
+      - { name: size, label: Maße (z.B. 200 × 50 cm), widget: string, required: false }
+      - { name: color, label: Farbe, widget: string, required: false }
+      - { name: image, label: Bild, widget: image }
+      - { name: description, label: Beschreibung, widget: text, required: false }
+
+  # REAL PROJECTS / REFERENCES
+  - name: references
+    label: Referenzprojekte
+    folder: "content/references"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: slug, label: Slug, widget: string }
+      - { name: location, label: Ort / Region, widget: string }
+      - { name: year, label: Jahr, widget: number }
+      - name: designs
+        label: Verwendete Designs
+        widget: relation
+        collection: fenceDesigns
+        search_fields: ["title"]
+        value_field: "slug"
+        display_fields: ["title"]
+        multiple: true
+      - { name: mainImage, label: Hauptbild, widget: image }
+      - name: gallery
+        label: Galerie
+        widget: list
+        field: { name: image, label: Bild, widget: image }
+      - { name: description, label: Beschreibung, widget: markdown }

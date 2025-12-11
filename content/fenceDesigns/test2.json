@@ -1,0 +1,24 @@
+{
+  "title": "test2",
+  "slug": "test2",
+  "shortDescription": "test2",
+  "longDescription": "tasd",
+  "mainImage": "/uploads/_68A9919.jpg",
+  "gallery": [
+    "/uploads/_68A9921.jpg"
+  ],
+  "heights": [
+    1,
+    2
+  ],
+  "colors": [
+    "adswf"
+  ],
+  "panelShapes": [
+    "Flach"
+  ],
+  "features": [
+    "aaaaa"
+  ],
+  "isFeatured": true
+}

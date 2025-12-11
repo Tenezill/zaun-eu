@@ -19,6 +19,7 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@types/node": "^25.0.0",
     "postcss": "^8.5.6",
     "stylelint": "^16.26.1",
     "stylelint-config-tailwindcss": "^1.0.0",

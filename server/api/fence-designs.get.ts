@@ -1,10 +1,20 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 export default defineEventHandler(async () => {
-  // Load all JSON files from content/fenceDesigns
-  const files = import.meta.glob('~/content/fenceDesigns/*.json', { eager: true })
+  const directory = path.resolve('content/fenceDesigns')
+  const filenames = await fs.readdir(directory)
 
-  const designs = Object.values(files).map((mod: any) => mod.default || mod)
+  const designs = []
 
-  // Optional: sort featured first, then by title
+  for (const filename of filenames) {
+    if (filename.endsWith('.json')) {
+      const filePath = path.join(directory, filename)
+      const json = JSON.parse(await fs.readFile(filePath, 'utf8'))
+      designs.push(json)
+    }
+  }
+
   designs.sort((a: any, b: any) => {
     if (a.isFeatured === b.isFeatured) {
       return a.title.localeCompare(b.title, 'de')
